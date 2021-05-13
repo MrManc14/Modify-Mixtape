@@ -1,0 +1,35 @@
+{
+  "add": [
+    {
+      "playlist": 
+        {
+	  "user_id": "1",
+          "song_ids": [
+            "1"
+          ]
+        }
+    }
+  ],
+  "delete": [
+    {
+      "playlist": 
+        {
+          "id": "1"
+        }
+    }
+  ],
+  "update": [
+    {
+      "playlist": 
+        {
+          "id": "2",
+          "add": 
+            {
+              "song_ids": [
+                 "1"
+              ]
+            }
+        }
+    }
+  ]
+}
