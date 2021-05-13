@@ -9,7 +9,7 @@ Application design
 ========================================
 This application is designed to follow OOP principles.
 
-The commands from the *changes.json* are meant to correspond to a few RESTful operation POST, PATCH;
+The commands from the *changes.json* are meant to correspond to a few RESTful operation POST, DELETE, PATCH;
 as seen we define 'add', 'delete', and 'update' respectively.
 
 
