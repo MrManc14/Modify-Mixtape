@@ -1,0 +1,33 @@
+Running the batch application
+========================================
+1. In the terminal change directories to the projects *src* directory
+2. Type 'python modify_mixtape.py'
+3. A file will be created in the *data* directory called output.json
+
+
+Application design
+========================================
+This application is designed to follow OOP principles.
+
+The commands from the *changes.json* are meant to correspond to a few RESTful operation POST, PATCH;
+as seen we define 'add', 'delete', and 'update' respectively.
+
+
+Scaling
+========================================
+**Large input files**
+Large input files requires enhanced searching capabilities to quickly find the data needed to be returned or modified.
+To accomplish this I would like to split up our json objects into separate files; one file for users, playlists, and songs.
+This approach will be more efficient because (1) for each operation (add, delete, update) requires a resource and we will be
+able to find the resource more easily in a specific file rather than nested data. (2) We will be able to concurrently run multiple
+operations at once, as long as the resources are unique. For example, adding a playing versus deleting a playlist can be
+processed at the same time because we will be changing different files so there is no risk of data persistence.
+
+**Large change files**
+Large change files requires enhanced sorting to group together like resources. With the design suggested above grouping 
+changes to the same resource allows us (1) to process changes concurrently. (2) If we had individual files per resource 
+we would be able to update the contents much quicker because we wouldn't have to wait until all operations are complete 
+writing out the final result. For example, with one large file, if we were to add 100 playlists and add 100 songs 
+we would have to wait until all 200 operations complete, but if we split the files into resources the amount of time 
+would be cut in half.
+
